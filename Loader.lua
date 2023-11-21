@@ -116,15 +116,17 @@ Duration = 8;
 end)
 
 
+
 local bang = false
+local stupid
+local notFunny
 
 btnSex.MouseButton1Click:Connect(function()
-btnSex.Text = "Un Bang"
-  
+btnSex.Text = "Stop Bang"
 bang = true
     if bang then
 local player = tbxVictim.Text
-local stupid = Instance.new('Animation')
+stupid = Instance.new('Animation')
 stupid.AnimationId = 'rbxassetid://148840371'
 hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
 pcall(function()
@@ -133,7 +135,7 @@ end)
 pcall(function()
     hummy.Parent.Shirt:Destroy()
 end)
-local notfunny = hummy:LoadAnimation(stupid)
+notfunny = hummy:LoadAnimation(stupid)
 notfunny:Play()
 notfunny:AdjustSpeed(10)
 while hummy.Parent.Parent ~= nil do
@@ -143,12 +145,12 @@ end
 end
 end)
 
-
 unBang.MouseButton1Click:Connect(function()
 bang = false
-  btnSex.Text = "Bang"
+notFunny:Stop()
+stupid:Destroy()
+btnSex.Text = "Bang"
 end)
-
 -- DRAG
 
 game:GetService("UserInputService").InputChanged:Connect(function(input)
