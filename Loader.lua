@@ -147,7 +147,7 @@ end)
 
 unBang.MouseButton1Click:Connect(function()
 bang = false
-notFunny:Stop()
+notfunny:Stop()
 stupid:Destroy()
 btnSex.Text = "Bang"
 end)
