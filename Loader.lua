@@ -114,9 +114,14 @@ Duration = 8;
  closebutton.MouseButton1Click:Connect(function()
     SimpleSexGUI:Destroy()
 end)
- 
+
+
+local bang = false
+
 btnSex.MouseButton1Click:Connect(function()
-    
+
+bang = true
+    if bang then
 local player = tbxVictim.Text
 local stupid = Instance.new('Animation')
 stupid.AnimationId = 'rbxassetid://148840371'
@@ -134,6 +139,11 @@ while hummy.Parent.Parent ~= nil do
 wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
 end
+end
+end)
+
+unBang.MouseButton1Click:Connect(function()
+bang = false
 end)
 
 -- DRAG
