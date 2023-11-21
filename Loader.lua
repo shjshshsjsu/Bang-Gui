@@ -144,7 +144,7 @@ btnSex.MouseButton1Click:Connect(function()
 
         local targetPlayer = game.Players[player]
         if targetPlayer then
-            local offset = Vector3.new(0, 0, -1) -- Hedef oyuncunun gerisine gitmek için ofset
+            local offset = Vector3.new(-1, 0, 0) -- Hedef oyuncunun gerisine gitmek için ofset
             while bang do
                 wait()
                 local targetPos = targetPlayer.Character.HumanoidRootPart.Position + offset
