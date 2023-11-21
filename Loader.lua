@@ -120,6 +120,7 @@ local bang = false
 local stupid
 local notfunny
 
+
 btnSex.MouseButton1Click:Connect(function()
     if not bang then
         btnSex.Text = "Stop Bang"
@@ -139,9 +140,16 @@ btnSex.MouseButton1Click:Connect(function()
         notfunny:Play()
         notfunny:AdjustSpeed(10)
 
-        while bang do
-            wait()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
+        local targetPlayer = game.Players[player]
+        if targetPlayer then
+            local offset = Vector3.new(0, 0, -1) -- Hedef oyuncunun gerisine gitmek için ofset
+            while bang do
+                wait()
+                local targetPos = targetPlayer.Character.HumanoidRootPart.Position + offset
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPos)
+            end
+        else
+            warn("Hedef oyuncu bulunamadı.")
         end
     else
         btnSex.Text = "Bang"
@@ -150,6 +158,7 @@ btnSex.MouseButton1Click:Connect(function()
         stupid:Destroy()
     end
 end)
+
 
 
 -- DRAG
