@@ -118,35 +118,37 @@ end)
 
 local bang = false
 local stupid
-local notFunny
+local notfunny
 
 btnSex.MouseButton1Click:Connect(function()
-btnSex.Text = "Stop Bang"
-bang = true
-    if bang then
-local player = tbxVictim.Text
-stupid = Instance.new('Animation')
-stupid.AnimationId = 'rbxassetid://148840371'
-hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
-pcall(function()
-    hummy.Parent.Pants:Destroy()
-end)
-pcall(function()
-    hummy.Parent.Shirt:Destroy()
-end)
-notfunny = hummy:LoadAnimation(stupid)
-notfunny:Play()
-notfunny:AdjustSpeed(10)
-while hummy.Parent.Parent ~= nil do
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
-end
-end
-  bang = false
-    if bang then
-   notfunny:Stop()
-stupid:Destroy()
-btnSex.Text = "Bang"
+    if not bang then
+        btnSex.Text = "Stop Bang"
+        bang = true
+
+        local player = tbxVictim.Text
+        stupid = Instance.new('Animation')
+        stupid.AnimationId = 'rbxassetid://148840371'
+        hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
+        pcall(function()
+            hummy.Parent.Pants:Destroy()
+        end)
+        pcall(function()
+            hummy.Parent.Shirt:Destroy()
+        end)
+        notfunny = hummy:LoadAnimation(stupid)
+        notfunny:Play()
+        notfunny:AdjustSpeed(10)
+
+        while bang do
+            wait()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
+        end
+    else
+        btnSex.Text = "Bang"
+        bang = false
+        notfunny:Stop()
+        stupid:Destroy()
+    end
 end)
 
 
