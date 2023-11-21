@@ -112,7 +112,7 @@ Duration = 8;
 
 --Scripts
  closebutton.MouseButton1Click:Connect(function()
-    main:Destroy()
+    SimpleSexGUI;Destroy()
 end)
  
 btnSex.MouseButton1Click:Connect(function()
@@ -152,7 +152,7 @@ FGUI.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
         dragging = true
         dragStart = input.Position
-        startPos = Frame.Position
+        startPos = FGUI.Position
 
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
