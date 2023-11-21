@@ -122,12 +122,13 @@ local notfunny
 
 
 
+
 btnSex.MouseButton1Click:Connect(function()
     if not bang then
         btnSex.Text = "Stop Bang"
         bang = true
 
-        local player = FindPlayerByPartialName(tbxVictim.Text)
+        local player = tbxVictim.Text
         stupid = Instance.new('Animation')
         stupid.AnimationId = 'rbxassetid://148840371'
         hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
@@ -150,7 +151,7 @@ btnSex.MouseButton1Click:Connect(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPos)
             end
         else
-            warn("target player not found .")
+            warn("Hedef oyuncu bulunamadı.")
         end
     else
         btnSex.Text = "Bang"
@@ -160,15 +161,6 @@ btnSex.MouseButton1Click:Connect(function()
     end
 end)
 
-function FindPlayerByPartialName(partialName)
-    local players = game.Players:GetPlayers()
-    for _, player in ipairs(players) do
-        if string.find(player.Name:lower(), partialName:lower()) then
-            return player
-        end
-    end
-    return nil
-end
 
 
 -- DRAG
