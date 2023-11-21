@@ -42,7 +42,7 @@ FGUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
 FGUI.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
 FGUI.Size = UDim2.new(0.5, 0, 0.5, 0)
 FGUI.Style = Enum.FrameStyle.RobloxRound
- 
+
  
 lbltitle.Name = "Title"
 lbltitle.Parent = FGUI
@@ -112,7 +112,7 @@ Duration = 8;
 
 --Scripts
  closebutton.MouseButton1Click:Connect(function()
-    SimpleSexGUI;Destroy()
+    SimpleSexGUI:Destroy()
 end)
  
 btnSex.MouseButton1Click:Connect(function()
