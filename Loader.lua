@@ -150,7 +150,7 @@ btnSex.MouseButton1Click:Connect(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPos)
             end
         else
-            warn("Hedef oyuncu bulunamadı.")
+            warn("target player not found .")
         end
     else
         btnSex.Text = "Bang"
