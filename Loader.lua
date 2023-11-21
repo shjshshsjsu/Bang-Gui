@@ -49,7 +49,7 @@ lbltitle.Parent = FGUI
 lbltitle.Position = UDim2.new(0, 45, 0, -12)
 lbltitle.BackgroundColor3 = Color3.new(1, 1, 1)  
 lbltitle.Size = UDim2.new(0, 50, 0, 50)  
-lbltitle.Text = "Script Name"
+lbltitle.Text = "Bang GUI"
 lbltitle.TextSize = 30  
 lbltitle.Font = Enum.Font.SourceSans
 lbltitle.TextColor3 = Color3.new(255, 255, 255)  
@@ -119,7 +119,8 @@ end)
 local bang = false
 
 btnSex.MouseButton1Click:Connect(function()
-
+btnSex.Text = "Un Bang"
+  
 bang = true
     if bang then
 local player = tbxVictim.Text
@@ -142,8 +143,10 @@ end
 end
 end)
 
+
 unBang.MouseButton1Click:Connect(function()
 bang = false
+  btnSex.Text = "Bang"
 end)
 
 -- DRAG
