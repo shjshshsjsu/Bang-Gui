@@ -70,8 +70,7 @@ btnSex.Text = "Bang"
 btnSex.TextColor3 = Color3.new(1, 1, 1)
 btnSex.TextSize = 20
  uiCorner.Parent = btnSex
- 
- 
+
 tbxVictim.Name = "VictimTEXT"
 tbxVictim.Parent = FGUI
 tbxVictim.BackgroundColor3 = Color3.new(0, 0, 0)  
@@ -143,14 +142,14 @@ wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
 end
 end
-end)
-
-unBang.MouseButton1Click:Connect(function()
-bang = false
-notfunny:Stop()
+  bang = false
+    if bang then
+   notfunny:Stop()
 stupid:Destroy()
 btnSex.Text = "Bang"
 end)
+
+
 -- DRAG
 
 game:GetService("UserInputService").InputChanged:Connect(function(input)
