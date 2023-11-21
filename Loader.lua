@@ -92,7 +92,7 @@ line.BorderColor3 = Color3.fromRGB(0, 0, 0)
 line.Position = UDim2.new(0, 0, 0, 40)
 
 closebutton.Name = "Close"
-closebutton.Parent = Frame
+closebutton.Parent = FGUI
 closebutton.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 closebutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 closebutton.Font = "SourceSans"
