@@ -1,3 +1,8 @@
+local dragging
+local dragInput
+local dragStart
+local startPos
+
 local SimpleSexGUI = Instance.new("ScreenGui")
  
 local FGUI = Instance.new("Frame")
@@ -10,16 +15,17 @@ local tbxVictim = Instance.new("TextBox")
  
 local lblFUCKEMALL = Instance.new("TextLabel")
  
-local ImageLabel = Instance.new("ImageLabel")
+local line = Instance.new("Frame")
  
 local lbltitle = Instance.new("TextLabel")
  
 local TextLabel = Instance.new("TextLabel")
  
+local closebutton = Instance.new("TextButton")
  
- 
- 
- 
+local uiCorner = Instance.new("UICorner")
+
+local uiCorner2 = Instance.new("UICorner") 
  
  
  
@@ -31,28 +37,23 @@ SimpleSexGUI.Parent = game.CoreGui
  
 FGUI.Name = "FGUI"
 FGUI.Parent = SimpleSexGUI
-FGUI.BackgroundColor3 = Color3.new(255,255,255)
-FGUI.BorderSizePixel = 1
-FGUI.Position = UDim2.new(0,0, 0.667, 0)
-FGUI.Size = UDim2.new(0,317, 0,271)
-FGUI.Draggable = true
- 
+FGUI.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+FGUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FGUI.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
+FGUI.Size = UDim2.new(0.5, 0, 0.5, 0)
+FGUI.Style = Enum.FrameStyle.RobloxRound
  
  
 lbltitle.Name = "Title"
 lbltitle.Parent = FGUI
-lbltitle.BackgroundColor3 = Color3.new(255,255,255)
-lbltitle.BorderSizePixel = 1
-lbltitle.Position = UDim2.new (0, 0,-0.122, 0)
-lbltitle.Size = UDim2.new (0, 317,0, 33)
-lbltitle.Visible = true
-lbltitle.Active = true
-lbltitle.Draggable = false
-lbltitle.Selectable = true
-lbltitle.Font = Enum.Font.SourceSansBold
-lbltitle.Text = "A Simple Fuck(ing) GUI!!"
-lbltitle.TextColor3 = Color3.new(0, 0, 0)
-lbltitle.TextSize = 20
+lbltitle.Position = UDim2.new(0, 45, 0, -12)
+lbltitle.BackgroundColor3 = Color3.new(1, 1, 1)  
+lbltitle.Size = UDim2.new(0, 50, 0, 50)  
+lbltitle.Text = "Script Name"
+lbltitle.TextSize = 30  
+lbltitle.Font = Enum.Font.SourceSans
+lbltitle.TextColor3 = Color3.new(255, 255, 255)  
+lbltitle.BackgroundTransparency = 1
  
  
  
@@ -60,61 +61,59 @@ lbltitle.TextSize = 20
  
 btnSex.Name = "Sex"
 btnSex.Parent = FGUI
-btnSex.BackgroundColor3 = Color3.new(255,255,255)
-btnSex.BorderSizePixel = 1
-btnSex.Position = UDim2.new (0.044, 0,0.229, 0)
-btnSex.Size = UDim2.new (0, 99,0, 31)
-btnSex.Visible = true
+btnSex.BackgroundColor3 = Color3.new(0,0,0)
+btnSex.Position = UDim2.new (0, 0, 0, 60)
+btnSex.Size = UDim2.new (0, 160, 0, 30)
 btnSex.Active = true
-btnSex.Draggable = false
-btnSex.Selectable = true
 btnSex.Font = Enum.Font.SourceSansBold
-btnSex.Text = "Let's FUCK!!"
-btnSex.TextColor3 = Color3.new(0, 0, 0)
+btnSex.Text = "Bang"
+btnSex.TextColor3 = Color3.new(1, 1, 1)
 btnSex.TextSize = 20
- 
- 
+ uiCorner.Parent = btnSex
  
  
 tbxVictim.Name = "VictimTEXT"
 tbxVictim.Parent = FGUI
-tbxVictim.BackgroundColor3 = Color3.new(255,255,255)
-tbxVictim.BorderSizePixel = 1
-tbxVictim.Position = UDim2.new (0.533, 0,0.229, 0)
-tbxVictim.Size = UDim2.new (0, 133,0, 27)
-tbxVictim.Visible = true
-tbxVictim.Active = true
-tbxVictim.Draggable = false
-tbxVictim.Selectable = true
-tbxVictim.Font = Enum.Font.SourceSansBold
-tbxVictim.Text = "[NAME]"
-tbxVictim.TextColor3 = Color3.new(0, 0, 0)
+tbxVictim.BackgroundColor3 = Color3.new(0, 0, 0)  
+tbxVictim.Font = Enum.Font.SourceSans
+tbxVictim.Size = UDim2.new(0, 160, 0, 30)
+tbxVictim.Text = "Player Name"
 tbxVictim.TextSize = 20
- 
-lblFUCKEMALL.Name = "FUCKEMALL"
-lblFUCKEMALL.Parent = FGUI
-lblFUCKEMALL.BackgroundColor3 = Color3.new(255,255,255)
-lblFUCKEMALL.BorderSizePixel = 1
-lblFUCKEMALL.Position = UDim2.new (0.025, 0,0.856, 0)
-lblFUCKEMALL.Size = UDim2.new (0, 301,0, 27)
-lblFUCKEMALL.Visible = true
-lblFUCKEMALL.Font = Enum.Font.SourceSansBold
-lblFUCKEMALL.Text = "FUCK AND FUCK"
-lblFUCKEMALL.TextColor3 = Color3.new(0, 0, 0)
-lblFUCKEMALL.TextSize = 20
- 
-ImageLabel.Name = "ImageLabel"
-ImageLabel.Parent = FGUI
-ImageLabel.Image = "http://www.roblox.com/asset/?id=4283774086"
-ImageLabel.BorderSizePixel = 1
-ImageLabel.Position = UDim2.new (0.274, 0,0.358, 0)
-ImageLabel.Size = UDim2.new (0, 106,0, 121)
- 
- 
- 
- 
+tbxVictim.TextColor3 = Color3.new(1, 1, 1)  
+uiCorner2.Parent = tbxVictim -- Kenarları Yumuşatma
+tbxVictim.Position = UDim2.new(0, 180, 0, 60)
+
+line.Name = "line"
+line.Parent = FGUI
+line.BorderSizePixel = 0
+line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+line.Size = UDim2.new(1, 0, 0, -2)
+line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+line.Position = UDim2.new(0, 0, 0, 40)
+
+closebutton.Name = "Close"
+closebutton.Parent = Frame
+closebutton.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+closebutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+closebutton.Font = "SourceSans"
+closebutton.Size = UDim2.new(0, 45, 0, 30)
+closebutton.Text = "X"
+closebutton.TextSize = 30
+closebutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closebutton.Position = UDim2.new(1, -closebutton.Size.X.Offset, 0, 0)
+closebutton.BackgroundTransparency = 1
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Bang Gui",
+    Text = "By Wreston",
+    Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"
+})
+Duration = 8;
+
 --Scripts
- 
+ closebutton.MouseButton1Click:Connect(function()
+    main:Destroy()
+end)
  
 btnSex.MouseButton1Click:Connect(function()
     
@@ -135,4 +134,42 @@ while hummy.Parent.Parent ~= nil do
 wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tbxVictim.Text].Character.HumanoidRootPart.CFrame
 end
+end)
+
+-- DRAG
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        updateInput(input)
+    end
+end)
+local function updateInput(input)
+    local delta = input.Position - dragStart
+    FGUI.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+FGUI.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = Frame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+FGUI.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        updateInput(input)
+    end
 end)
